@@ -1,0 +1,50 @@
+object f_Principal: Tf_Principal
+  Left = 0
+  Top = 0
+  Caption = 'Grafit V.01'
+  ClientHeight = 442
+  ClientWidth = 774
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 423
+    Width = 774
+    Height = 19
+    Panels = <>
+    ExplicitLeft = 200
+    ExplicitTop = 352
+    ExplicitWidth = 0
+  end
+  object MainMenu1: TMainMenu
+    Left = 328
+    Top = 168
+    object Cadastro1: TMenuItem
+      Caption = 'Cadastro'
+    end
+  end
+  object ActionList1: TActionList
+    Left = 424
+    Top = 168
+    object act_Clientes: TAction
+      Caption = 'act_Clientes'
+    end
+    object act_Produtos: TAction
+      Caption = 'act_Produtos'
+    end
+    object act_Servicos: TAction
+      Caption = 'act_Servicos'
+    end
+    object act_Profissionais: TAction
+      Caption = 'act_Profissionais'
+    end
+  end
+end

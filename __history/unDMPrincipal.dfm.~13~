@@ -1,0 +1,124 @@
+object DMPrincipal: TDMPrincipal
+  OldCreateOrder = False
+  Height = 448
+  Width = 770
+  object conexao: TIBCConnection
+    Database = 'C:\grafit\DB\GRAFIT.FDB'
+    Options.Charset = 'WIN1252'
+    ClientLibrary = 'C:\Program Files (x86)\Firebird\Firebird_3_0\fbclient.dll'
+    Username = 'mister'
+    Password = '#123456'
+    Server = 'localhost'
+    Connected = True
+    Left = 56
+    Top = 24
+  end
+  object transclientes: TIBCTransaction
+    DefaultConnection = conexao
+    Left = 56
+    Top = 104
+  end
+  object qryClientes: TIBCQuery
+    Connection = conexao
+    Transaction = transclientes
+    UpdateTransaction = transclientes
+    SQL.Strings = (
+      'select * from clientes')
+    UpdateObject = upClientes
+    Left = 48
+    Top = 160
+  end
+  object upClientes: TIBCUpdateSQL
+    Left = 48
+    Top = 216
+  end
+  object transEstoque: TIBCTransaction
+    DefaultConnection = conexao
+    Left = 168
+    Top = 104
+  end
+  object qryEstoque: TIBCQuery
+    Connection = conexao
+    Left = 160
+    Top = 160
+  end
+  object upEstoque: TIBCUpdateSQL
+    Left = 160
+    Top = 216
+  end
+  object transProfissionais: TIBCTransaction
+    DefaultConnection = conexao
+    Left = 272
+    Top = 104
+  end
+  object qryProfissionais: TIBCQuery
+    Connection = conexao
+    Left = 272
+    Top = 160
+  end
+  object upProfissionais: TIBCUpdateSQL
+    Left = 272
+    Top = 224
+  end
+  object transOrdens: TIBCTransaction
+    DefaultConnection = conexao
+    Left = 384
+    Top = 104
+  end
+  object qryOrdens: TIBCQuery
+    Connection = conexao
+    Left = 376
+    Top = 160
+  end
+  object upOrdens: TIBCUpdateSQL
+    Left = 384
+    Top = 232
+  end
+  object transUsuarios: TIBCTransaction
+    DefaultConnection = conexao
+    Left = 496
+    Top = 104
+  end
+  object qryUsuarios: TIBCQuery
+    Connection = conexao
+    Transaction = transUsuarios
+    UpdateTransaction = transUsuarios
+    UpdateObject = upUsuarios
+    Left = 496
+    Top = 168
+  end
+  object upUsuarios: TIBCUpdateSQL
+    Left = 496
+    Top = 224
+  end
+  object dsClientes: TDataSource
+    AutoEdit = False
+    DataSet = qryClientes
+    Left = 48
+    Top = 280
+  end
+  object dsEstoque: TDataSource
+    AutoEdit = False
+    DataSet = qryEstoque
+    Left = 160
+    Top = 280
+  end
+  object dsProfissionais: TDataSource
+    AutoEdit = False
+    DataSet = qryProfissionais
+    Left = 272
+    Top = 280
+  end
+  object dsOrdens: TDataSource
+    AutoEdit = False
+    DataSet = qryOrdens
+    Left = 392
+    Top = 288
+  end
+  object dsUsuarios: TDataSource
+    AutoEdit = False
+    DataSet = qryUsuarios
+    Left = 496
+    Top = 288
+  end
+end

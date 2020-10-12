@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/10/12 19:20:27.229.pas,C:\Users\Franklin\Documents\RAD Studio\Projects\Unit1.pas=E:\Dev\grafit_d\uPrincipal.pas</Transaction>
+    <Transaction>2020/10/12 19:20:27.229.dfm,C:\Users\Franklin\Documents\RAD Studio\Projects\Unit1.dfm=E:\Dev\grafit_d\uPrincipal.dfm</Transaction>
+    <Transaction>2020/10/12 19:20:36.905.dproj,C:\Users\Franklin\Documents\RAD Studio\Projects\Project1.dproj=E:\Dev\grafit_d\grafit.dproj</Transaction>
+    <Transaction>2020/10/12 19:30:39.625.pas,E:\Dev\grafit_d\Unit1.pas=E:\Dev\grafit_d\unDMPrincipal.pas</Transaction>
+    <Transaction>2020/10/12 19:30:39.625.dfm,E:\Dev\grafit_d\Unit1.dfm=E:\Dev\grafit_d\unDMPrincipal.dfm</Transaction>
+    <Transaction>2020/10/12 20:15:55.870.pas,E:\Dev\grafit_d\Unit1.pas=E:\Dev\grafit_d\unCadPadrao.pas</Transaction>
+    <Transaction>2020/10/12 20:15:55.870.dfm,E:\Dev\grafit_d\Unit1.dfm=E:\Dev\grafit_d\unCadPadrao.dfm</Transaction>
+    <Transaction>2020/10/12 20:51:06.856.pas,E:\Dev\grafit_d\Unit2.pas=E:\Dev\grafit_d\unConsultaPadrao.pas</Transaction>
+    <Transaction>2020/10/12 20:51:06.856.dfm,E:\Dev\grafit_d\Unit2.dfm=E:\Dev\grafit_d\unConsultaPadrao.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

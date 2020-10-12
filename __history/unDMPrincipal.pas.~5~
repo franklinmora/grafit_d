@@ -1,0 +1,39 @@
+unit unDMPrincipal;
+
+interface
+
+uses
+  SysUtils, Classes, DBAccess, IBC, DB, MemDS;
+
+type
+  TDataModule1 = class(TDataModule)
+    conexao: TIBCConnection;
+    transclientes: TIBCTransaction;
+    qryClientes: TIBCQuery;
+    upClientes: TIBCUpdateSQL;
+    transEstoque: TIBCTransaction;
+    qryEstoque: TIBCQuery;
+    upEstoque: TIBCUpdateSQL;
+    transProfissionais: TIBCTransaction;
+    qryProfissionais: TIBCQuery;
+    upProfissionais: TIBCUpdateSQL;
+    transOrdens: TIBCTransaction;
+    qryOrdens: TIBCQuery;
+    upOrdens: TIBCUpdateSQL;
+    transUsuarios: TIBCTransaction;
+    qryUsuarios: TIBCQuery;
+    upUsuarios: TIBCUpdateSQL;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DataModule1: TDataModule1;
+
+implementation
+
+{$R *.dfm}
+
+end.
