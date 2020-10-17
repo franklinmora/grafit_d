@@ -1,9 +1,9 @@
-object Form2: TForm2
+object f_Consultapadrao: Tf_Consultapadrao
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'Form2'
+  Caption = 'f_Consultapadrao'
   ClientHeight = 443
   ClientWidth = 777
   Color = clWhite
@@ -34,7 +34,7 @@ object Form2: TForm2
     Text = 'Edit1'
   end
   object DBGrid1: TDBGrid
-    Left = 8
+    Left = 10
     Top = 54
     Width = 747
     Height = 315
@@ -54,8 +54,6 @@ object Form2: TForm2
     Color = 11043328
     ParentBackground = False
     TabOrder = 3
-    ExplicitTop = 378
-    ExplicitWidth = 573
     object Label1: TLabel
       Left = 8
       Top = 19

@@ -10,5 +10,33 @@
     <Transaction>2020/10/12 20:15:55.870.dfm,E:\Dev\grafit_d\Unit1.dfm=E:\Dev\grafit_d\unCadPadrao.dfm</Transaction>
     <Transaction>2020/10/12 20:51:06.856.pas,E:\Dev\grafit_d\Unit2.pas=E:\Dev\grafit_d\unConsultaPadrao.pas</Transaction>
     <Transaction>2020/10/12 20:51:06.856.dfm,E:\Dev\grafit_d\Unit2.dfm=E:\Dev\grafit_d\unConsultaPadrao.dfm</Transaction>
+    <Transaction>2020/10/12 22:07:13.040.pas,E:\Dev\grafit_d\UnCadServicos.pas=</Transaction>
+    <Transaction>2020/10/12 22:07:13.040.dfm,E:\Dev\grafit_d\UnCadServicos.dfm=</Transaction>
+    <Transaction>2020/10/12 22:07:13.070.pas,E:\Dev\grafit_d\UnCadProfissionais.pas=</Transaction>
+    <Transaction>2020/10/12 22:07:13.070.dfm,E:\Dev\grafit_d\UnCadProfissionais.dfm=</Transaction>
+    <Transaction>2020/10/12 22:07:13.078.pas,E:\Dev\grafit_d\UnCadProdutos.pas=</Transaction>
+    <Transaction>2020/10/12 22:07:13.078.dfm,E:\Dev\grafit_d\UnCadProdutos.dfm=</Transaction>
+    <Transaction>2020/10/12 22:07:13.087.pas,E:\Dev\grafit_d\UnCadClientes.pas=</Transaction>
+    <Transaction>2020/10/12 22:07:13.087.dfm,E:\Dev\grafit_d\UnCadClientes.dfm=</Transaction>
+    <Transaction>2020/10/16 20:11:02.461.pas,E:\Dev\grafit_d\Unit1.pas=E:\Dev\grafit_d\unCadClientes.pas</Transaction>
+    <Transaction>2020/10/16 20:11:02.461.dfm,E:\Dev\grafit_d\Unit1.dfm=E:\Dev\grafit_d\unCadClientes.dfm</Transaction>
+    <Transaction>2020/10/16 20:57:38.309.pas,E:\Dev\grafit_d\unCadClientes.pas=</Transaction>
+    <Transaction>2020/10/16 20:57:38.309.dfm,E:\Dev\grafit_d\unCadClientes.dfm=</Transaction>
+    <Transaction>2020/10/16 20:59:49.511.pas,E:\Dev\grafit_d\Unit1.pas=E:\Dev\grafit_d\unCadClientes.pas</Transaction>
+    <Transaction>2020/10/16 20:59:49.511.dfm,E:\Dev\grafit_d\Unit1.dfm=E:\Dev\grafit_d\unCadClientes.dfm</Transaction>
+    <Transaction>2020/10/16 21:00:15.787.pas,E:\Dev\grafit_d\unCadClientes.pas=</Transaction>
+    <Transaction>2020/10/16 21:00:15.787.dfm,E:\Dev\grafit_d\unCadClientes.dfm=</Transaction>
+    <Transaction>2020/10/16 21:01:59.021.pas,E:\Dev\grafit_d\Unit1.pas=E:\Dev\grafit_d\unCadClientes.pas</Transaction>
+    <Transaction>2020/10/16 21:01:59.021.dfm,E:\Dev\grafit_d\Unit1.dfm=E:\Dev\grafit_d\unCadClientes.dfm</Transaction>
+    <Transaction>2020/10/16 21:52:07.113.pas,E:\Dev\grafit_d\Unit1.pas=E:\Dev\grafit_d\unCadProfissionais.pas</Transaction>
+    <Transaction>2020/10/16 21:52:07.113.dfm,E:\Dev\grafit_d\Unit1.dfm=E:\Dev\grafit_d\unCadProfissionais.dfm</Transaction>
+    <Transaction>2020/10/16 21:59:18.404.pas,E:\Dev\grafit_d\Unit1.pas=E:\Dev\grafit_d\unEstoque.pas</Transaction>
+    <Transaction>2020/10/16 21:59:18.404.dfm,E:\Dev\grafit_d\Unit1.dfm=E:\Dev\grafit_d\unEstoque.dfm</Transaction>
+    <Transaction>2020/10/16 22:09:20.525.pas,E:\Dev\grafit_d\Unit1.pas=E:\Dev\grafit_d\unOrdens.pas</Transaction>
+    <Transaction>2020/10/16 22:09:20.525.dfm,E:\Dev\grafit_d\Unit1.dfm=E:\Dev\grafit_d\unOrdens.dfm</Transaction>
+    <Transaction>2020/10/16 23:20:55.341.pas,E:\Dev\grafit_d\Unit1.pas=E:\Dev\grafit_d\unOrdens.pas</Transaction>
+    <Transaction>2020/10/16 23:20:55.341.dfm,E:\Dev\grafit_d\Unit1.dfm=E:\Dev\grafit_d\unOrdens.dfm</Transaction>
+    <Transaction>2020/10/16 23:29:17.303.pas,E:\Dev\grafit_d\Unit1.pas=E:\Dev\grafit_d\unCadEstoque.pas</Transaction>
+    <Transaction>2020/10/16 23:29:17.303.dfm,E:\Dev\grafit_d\Unit1.dfm=E:\Dev\grafit_d\unCadEstoque.dfm</Transaction>
   </Transactions>
 </BorlandProject>

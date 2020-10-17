@@ -41,27 +41,27 @@
 			<DCCReference Include="uPrincipal.pas">
 				<Form>f_Principal</Form>
 			</DCCReference>
-			<DCCReference Include="UnCadClientes.pas">
-				<Form>F_CadCliente</Form>
-			</DCCReference>
-			<DCCReference Include="UnCadProdutos.pas">
-				<Form>F_CadProdutos</Form>
-			</DCCReference>
-			<DCCReference Include="UnCadProfissionais.pas">
-				<Form>F_CadProfissionais</Form>
-			</DCCReference>
-			<DCCReference Include="UnCadServicos.pas">
-				<Form>F_CadServicos</Form>
-			</DCCReference>
 			<DCCReference Include="unDMPrincipal.pas">
 				<Form>DMPrincipal</Form>
 				<DesignClass>TDataModule</DesignClass>
 			</DCCReference>
 			<DCCReference Include="unCadPadrao.pas">
-				<Form>Form1</Form>
+				<Form>F_cadPadrao</Form>
 			</DCCReference>
 			<DCCReference Include="unConsultaPadrao.pas">
-				<Form>Form2</Form>
+				<Form>f_Consultapadrao</Form>
+			</DCCReference>
+			<DCCReference Include="unCadClientes.pas">
+				<Form>F_CadClientes</Form>
+			</DCCReference>
+			<DCCReference Include="unCadProfissionais.pas">
+				<Form>F_cadProfissionais</Form>
+			</DCCReference>
+			<DCCReference Include="unOrdens.pas">
+				<Form>F_Ordens</Form>
+			</DCCReference>
+			<DCCReference Include="unCadEstoque.pas">
+				<Form>F_cadEstoque</Form>
 			</DCCReference>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>

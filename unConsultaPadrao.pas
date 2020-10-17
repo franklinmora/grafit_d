@@ -7,7 +7,7 @@ uses
   Dialogs, StdCtrls, ActnList, Grids, DBGrids, ExtCtrls;
 
 type
-  TForm2 = class(TForm)
+  Tf_Consultapadrao = class(TForm)
     ComboBox1: TComboBox;
     Edit1: TEdit;
     DBGrid1: TDBGrid;
@@ -22,7 +22,7 @@ type
   end;
 
 var
-  Form2: TForm2;
+  f_Consultapadrao: Tf_Consultapadrao;
 
 implementation
 

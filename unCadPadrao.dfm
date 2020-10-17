@@ -1,11 +1,11 @@
-object Form1: TForm1
+object F_cadPadrao: TF_cadPadrao
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'F_cadPadrao'
   ClientHeight = 448
-  ClientWidth = 573
+  ClientWidth = 697
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,19 +15,19 @@ object Form1: TForm1
   FormStyle = fsMDIChild
   OldCreateOrder = False
   Visible = True
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
     Top = 393
-    Width = 573
+    Width = 697
     Height = 55
     Align = alBottom
     Color = 11043328
     ParentBackground = False
     TabOrder = 0
-    ExplicitTop = 224
-    ExplicitWidth = 553
+    ExplicitWidth = 573
     object BitBtn1: TBitBtn
       Left = 176
       Top = 16
@@ -76,7 +76,7 @@ object Form1: TForm1
   object ScrollBox1: TScrollBox
     Left = 0
     Top = 0
-    Width = 573
+    Width = 697
     Height = 393
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
@@ -86,7 +86,7 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 1
-    ExplicitTop = -6
+    ExplicitWidth = 573
   end
   object ActionList1: TActionList
     Left = 472
@@ -114,7 +114,6 @@ object Form1: TForm1
     object act_fechar: TAction
       Caption = 'Fechar - F10'
       ShortCut = 121
-      OnExecute = act_fecharExecute
     end
   end
 end

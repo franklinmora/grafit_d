@@ -7,7 +7,7 @@ uses
   Dialogs, ActnList, StdCtrls, Buttons, ExtCtrls;
 
 type
-  TForm1 = class(TForm)
+  TF_cadPadrao = class(TForm)
     Panel1: TPanel;
     BitBtn1: TBitBtn;
     BitBtn3: TBitBtn;
@@ -21,7 +21,8 @@ type
     act_fechar: TAction;
     ScrollBox1: TScrollBox;
     BitBtn5: TBitBtn;
-    procedure act_fecharExecute(Sender: TObject);
+    Function Formexiste(Nomejanela:TForm):boolean;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -29,15 +30,26 @@ type
   end;
 
 var
-  Form1: TForm1;
+  F_cadPadrao: TF_cadPadrao;
 
 implementation
 
 {$R *.dfm}
 
-procedure TForm1.act_fecharExecute(Sender: TObject);
+procedure TF_cadPadrao.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-   Close;
+   Action := caFree;
+end;
+
+Function TF_cadPadrao.Formexiste(Nomejanela:TForm):boolean;
+var
+I : integer;
+begin
+  Formexiste := false;
+   for i := 0 to componentcount - 1 do
+    if Components[i] is TForm then
+    if TForm(Components[i])= nomejanela then
+      Formexiste := true;
 end;
 
 end.
