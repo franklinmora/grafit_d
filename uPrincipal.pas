@@ -29,11 +29,20 @@ type
     act_Relatorios: TAction;
     act_Ordens: TAction;
     act_Estoque: TAction;
+    Clientes1: TMenuItem;
+    Profissionais1: TMenuItem;
+    Movimento1: TMenuItem;
+    Estoque1: TMenuItem;
+    Sistema1: TMenuItem;
+    Sair1: TMenuItem;
+    act_CadEmpresa: TAction;
+    Empresa1: TMenuItem;
     procedure act_SairExecute(Sender: TObject);
     procedure act_ClientesExecute(Sender: TObject);
     procedure act_ProfissionaisExecute(Sender: TObject);
     procedure act_OrdensExecute(Sender: TObject);
     procedure act_EstoqueExecute(Sender: TObject);
+    procedure act_CadEmpresaExecute(Sender: TObject);
 
   private
     { Private declarations }
@@ -47,7 +56,7 @@ var
 
 implementation
 
-uses unCadClientes, unCadProfissionais, unOrdens, unCadEstoque;
+uses unCadClientes, unCadProfissionais, unOrdens, unCadEstoque, unCadempresa;
 
 {$R *.dfm}
 
@@ -60,6 +69,20 @@ begin
     if Components[i] is TForm then
     if TForm(Components[i])= nomejanela then
       Formexiste := true;
+end;
+
+procedure Tf_Principal.act_CadEmpresaExecute(Sender: TObject);
+begin
+     if Formexiste(F_CadEmpresa) = false then
+      Begin
+         F_CadEmpresa := TF_CadEmpresa.Create(Self);
+      end
+    else
+    If Formexiste(F_CadEmpresa) = true then
+      Begin
+        F_CadClientes.BringToFront;
+        F_CadClientes.SetFocus;
+      end;
 end;
 
 procedure Tf_Principal.act_ClientesExecute(Sender: TObject);

@@ -41,15 +41,8 @@
 			<DCCReference Include="uPrincipal.pas">
 				<Form>f_Principal</Form>
 			</DCCReference>
-			<DCCReference Include="unDMPrincipal.pas">
-				<Form>DMPrincipal</Form>
-				<DesignClass>TDataModule</DesignClass>
-			</DCCReference>
 			<DCCReference Include="unCadPadrao.pas">
 				<Form>F_cadPadrao</Form>
-			</DCCReference>
-			<DCCReference Include="unConsultaPadrao.pas">
-				<Form>f_Consultapadrao</Form>
 			</DCCReference>
 			<DCCReference Include="unCadClientes.pas">
 				<Form>F_CadClientes</Form>
@@ -62,6 +55,19 @@
 			</DCCReference>
 			<DCCReference Include="unCadEstoque.pas">
 				<Form>F_cadEstoque</Form>
+			</DCCReference>
+			<DCCReference Include="unDMPrincipal.pas">
+				<Form>DMPrincipal</Form>
+				<DesignClass>TDataModule</DesignClass>
+			</DCCReference>
+			<DCCReference Include="unConsultaClientes.pas">
+				<Form>F_ConsultaClientes</Form>
+			</DCCReference>
+			<DCCReference Include="unCadempresa.pas">
+				<Form>F_cadEmpresa</Form>
+			</DCCReference>
+			<DCCReference Include="unConsultaEstoque.pas">
+				<Form>f_ConsultaEstoque</Form>
 			</DCCReference>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>

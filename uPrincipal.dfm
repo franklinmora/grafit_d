@@ -10,7 +10,7 @@ object f_Principal: Tf_Principal
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
-  Font.Style = []
+  Font.Style = [fsBold]
   FormStyle = fsMDIForm
   Menu = MainMenu1
   OldCreateOrder = False
@@ -92,6 +92,27 @@ object f_Principal: Tf_Principal
     Top = 88
     object Cadastro1: TMenuItem
       Caption = 'Cadastro'
+      object Clientes1: TMenuItem
+        Action = act_Clientes
+      end
+      object Profissionais1: TMenuItem
+        Action = act_Profissionais
+      end
+      object Empresa1: TMenuItem
+        Action = act_CadEmpresa
+      end
+    end
+    object Movimento1: TMenuItem
+      Caption = 'Movimento'
+      object Estoque1: TMenuItem
+        Action = act_Estoque
+      end
+    end
+    object Sistema1: TMenuItem
+      Caption = 'Sistema'
+      object Sair1: TMenuItem
+        Action = act_Sair
+      end
     end
   end
   object ActionList1: TActionList
@@ -126,6 +147,10 @@ object f_Principal: Tf_Principal
       Caption = 'Estoque'
       OnExecute = act_EstoqueExecute
     end
+    object act_CadEmpresa: TAction
+      Caption = 'Empresa'
+      OnExecute = act_CadEmpresaExecute
+    end
   end
   object ImageList1: TImageList
     Height = 48
@@ -133,7 +158,7 @@ object f_Principal: Tf_Principal
     Left = 184
     Top = 88
     Bitmap = {
-      494C010107000C00240030003000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010107000C00380030003000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000C00000006000000001002000000000000020
       0100000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000FBFBFB00FBFB

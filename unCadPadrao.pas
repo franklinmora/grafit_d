@@ -4,25 +4,30 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ActnList, StdCtrls, Buttons, ExtCtrls;
+  Dialogs, ActnList, StdCtrls, Buttons, ExtCtrls, DB;
 
 type
   TF_cadPadrao = class(TForm)
     Panel1: TPanel;
-    BitBtn1: TBitBtn;
-    BitBtn3: TBitBtn;
-    BitBtn4: TBitBtn;
+    botaoNovo: TBitBtn;
+    botaoSalvar: TBitBtn;
     ActionList1: TActionList;
     act_novo: TAction;
     act_alterar: TAction;
-    act_cancelar: TAction;
     act_salvar: TAction;
     act_imprimir: TAction;
     act_fechar: TAction;
-    ScrollBox1: TScrollBox;
-    BitBtn5: TBitBtn;
+    botaofechar: TBitBtn;
+    act_Cancelar: TAction;
+    botaoAlterar: TBitBtn;
+    botaoCancelar: TBitBtn;
     Function Formexiste(Nomejanela:TForm):boolean;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure HabilitaBotoes(Sender: TObject);
+    procedure HabilitaControle(Sender: TObject);
+    procedure act_fecharExecute(Sender: TObject);
+    procedure DesabilitaControle(Sender: TObject);
+    procedure Desabilitabotoes(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,7 +39,14 @@ var
 
 implementation
 
+
+
 {$R *.dfm}
+
+procedure TF_cadPadrao.act_fecharExecute(Sender: TObject);
+begin
+   Close;
+end;
 
 procedure TF_cadPadrao.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
@@ -52,4 +64,37 @@ begin
       Formexiste := true;
 end;
 
+procedure TF_cadPadrao.HabilitaBotoes(Sender: TObject);
+begin
+   botaoNovo.Enabled     := True;
+   botaoAlterar.Enabled  := True;
+   botaoSalvar.Enabled   := False;
+   botaoCancelar.Enabled := False;
+
+end;
+procedure TF_cadPadrao.HabilitaControle(Sender: TObject);
+begin
+    botaoNovo.Enabled     := False;
+    botaoAlterar.Enabled  := False;
+    botaoCancelar.Enabled := False;
+    botaoSalvar.Enabled   := True;
+
+end;
+
+procedure TF_cadPadrao.Desabilitabotoes(Sender: TObject);
+begin
+  botaoNovo.Enabled     := False;
+  botaoAlterar.Enabled  := False;
+  botaoCancelar.Enabled := True;
+  botaoSalvar.Enabled   := True;
+end;
+
+
+procedure TF_cadPadrao.DesabilitaControle(Sender: TObject);
+begin
+    botaoNovo.Enabled     := True;
+    botaoAlterar.Enabled  := True;
+    botaoCancelar.Enabled := False;
+    botaoSalvar.Enabled   := False;
+end;
 end.

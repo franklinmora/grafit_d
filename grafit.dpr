@@ -3,13 +3,15 @@ program grafit;
 uses
   Forms,
   uPrincipal in 'uPrincipal.pas' {f_Principal},
-  unDMPrincipal in 'unDMPrincipal.pas' {DMPrincipal: TDataModule},
   unCadPadrao in 'unCadPadrao.pas' {F_cadPadrao},
-  unConsultaPadrao in 'unConsultaPadrao.pas' {f_Consultapadrao},
   unCadClientes in 'unCadClientes.pas' {F_CadClientes},
   unCadProfissionais in 'unCadProfissionais.pas' {F_cadProfissionais},
   unOrdens in 'unOrdens.pas' {F_Ordens},
-  unCadEstoque in 'unCadEstoque.pas' {F_cadEstoque};
+  unCadEstoque in 'unCadEstoque.pas' {F_cadEstoque},
+  unDMPrincipal in 'unDMPrincipal.pas' {DMPrincipal: TDataModule},
+  unConsultaClientes in 'unConsultaClientes.pas' {F_ConsultaClientes},
+  unCadempresa in 'unCadempresa.pas' {F_cadEmpresa},
+  unConsultaEstoque in 'unConsultaEstoque.pas' {f_ConsultaEstoque};
 
 {$R *.res}
 

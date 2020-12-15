@@ -4,8 +4,8 @@ object F_cadPadrao: TF_cadPadrao
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'F_cadPadrao'
-  ClientHeight = 448
-  ClientWidth = 697
+  ClientHeight = 242
+  ClientWidth = 597
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,16 +20,16 @@ object F_cadPadrao: TF_cadPadrao
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
-    Top = 393
-    Width = 697
+    Top = 187
+    Width = 597
     Height = 55
     Align = alBottom
     Color = 11043328
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 573
-    object BitBtn1: TBitBtn
-      Left = 176
+    ExplicitWidth = 697
+    object botaoNovo: TBitBtn
+      Left = 8
       Top = 16
       Width = 84
       Height = 33
@@ -39,8 +39,8 @@ object F_cadPadrao: TF_cadPadrao
       ParentDoubleBuffered = False
       TabOrder = 0
     end
-    object BitBtn3: TBitBtn
-      Left = 266
+    object botaoSalvar: TBitBtn
+      Left = 282
       Top = 16
       Width = 83
       Height = 33
@@ -50,46 +50,42 @@ object F_cadPadrao: TF_cadPadrao
       ParentDoubleBuffered = False
       TabOrder = 1
     end
-    object BitBtn4: TBitBtn
-      Left = 355
-      Top = 16
-      Width = 87
-      Height = 33
-      Action = act_imprimir
-      Caption = 'Imprimir - F7'
-      DoubleBuffered = True
-      ParentDoubleBuffered = False
-      TabOrder = 2
-    end
-    object BitBtn5: TBitBtn
-      Left = 448
-      Top = 16
+    object botaofechar: TBitBtn
+      Left = 381
+      Top = 17
       Width = 97
       Height = 33
       Action = act_fechar
       Caption = 'Fechar - F10'
       DoubleBuffered = True
       ParentDoubleBuffered = False
+      TabOrder = 2
+    end
+    object botaoAlterar: TBitBtn
+      Left = 98
+      Top = 16
+      Width = 79
+      Height = 33
+      Action = act_alterar
+      Caption = 'Alterar - F4'
+      DoubleBuffered = True
+      ParentDoubleBuffered = False
       TabOrder = 3
     end
-  end
-  object ScrollBox1: TScrollBox
-    Left = 0
-    Top = 0
-    Width = 697
-    Height = 393
-    Align = alClient
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-    TabOrder = 1
-    ExplicitWidth = 573
+    object botaoCancelar: TBitBtn
+      Left = 183
+      Top = 16
+      Width = 93
+      Height = 33
+      Action = act_Cancelar
+      Caption = 'Cancelar - F5'
+      DoubleBuffered = True
+      ParentDoubleBuffered = False
+      TabOrder = 4
+    end
   end
   object ActionList1: TActionList
-    Left = 472
+    Left = 536
     Top = 32
     object act_novo: TAction
       Caption = 'Novo - F3'
@@ -98,10 +94,6 @@ object F_cadPadrao: TF_cadPadrao
     object act_alterar: TAction
       Caption = 'Alterar - F4'
       ShortCut = 115
-    end
-    object act_cancelar: TAction
-      Caption = 'Cancelar - F5'
-      ShortCut = 116
     end
     object act_salvar: TAction
       Caption = 'Salvar - F6'
@@ -114,6 +106,10 @@ object F_cadPadrao: TF_cadPadrao
     object act_fechar: TAction
       Caption = 'Fechar - F10'
       ShortCut = 121
+      OnExecute = act_fecharExecute
+    end
+    object act_Cancelar: TAction
+      Caption = 'Cancelar - F5'
     end
   end
 end
