@@ -1,0 +1,58 @@
+unit unCadEstoque;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, unCadPadrao, ActnList, StdCtrls, Buttons, ExtCtrls, DB, Mask, DBCtrls;
+
+type
+  TF_cadEstoque = class(TF_cadPadrao)
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    dsEstoque: TDataSource;
+    Label2: TLabel;
+    DBEdit2: TDBEdit;
+    Label3: TLabel;
+    DBEdit3: TDBEdit;
+    Label4: TLabel;
+    DBEdit4: TDBEdit;
+    Label5: TLabel;
+    DBEdit5: TDBEdit;
+    Label6: TLabel;
+    DBEdit6: TDBEdit;
+    Label7: TLabel;
+    DBEdit7: TDBEdit;
+    act_Pesquisar: TAction;
+    botaoPesquisar: TBitBtn;
+    procedure act_PesquisarExecute(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  F_cadEstoque: TF_cadEstoque;
+
+implementation
+
+{$R *.dfm}
+uses
+  undmprincipal;
+
+procedure TF_cadEstoque.act_PesquisarExecute(Sender: TObject);
+begin
+  inherited;
+   if Formexiste(F_CadEstoque) = false then
+      Begin
+         F_CadEstoque := TF_CadEstoque.Create(Self);
+      end
+    else
+    If Formexiste(F_CadEstoque) = true then
+      Begin
+        F_cadEstoque.BringToFront;
+        F_cadEstoque.SetFocus;
+      end;
+
+end.

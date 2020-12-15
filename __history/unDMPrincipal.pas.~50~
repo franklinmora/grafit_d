@@ -1,0 +1,158 @@
+unit unDMPrincipal;
+
+interface
+
+uses
+  SysUtils, Classes, DBAccess, DB, MemDS, IBCustomDataSet,
+   Uni, UniProvider, MySQLUniProvider, InterBaseUniProvider;
+
+type
+  TDMPrincipal = class(TDataModule)
+    dsEstoque: TDataSource;
+    dsProfissionais: TDataSource;
+    dsOrdens: TDataSource;
+    dsUsuarios: TDataSource;
+    dsCidade: TDataSource;
+    UniConnection1: TUniConnection;
+    UniTransaction1: TUniTransaction;
+    qryClientes: TUniQuery;
+    qryCidade: TUniQuery;
+    qryCidadeCODIGO: TIntegerField;
+    qryCidadeNOME: TStringField;
+    qryCidadeUF: TStringField;
+    qryCidadePAIS: TStringField;
+    qryCidadeCODIGO_IBGE: TStringField;
+    qryClientesCLI_IDCLIENTE: TIntegerField;
+    qryClientesCLI_INSTAGRAM: TStringField;
+    qryClientesCLI_CPFCNPJ: TStringField;
+    qryClientesCLI_NOME: TStringField;
+    qryClientesCLI_ANIVERSARIO: TDateField;
+    qryClientesCLI_ENDERECO: TStringField;
+    qryClientesCLI_CEP: TStringField;
+    qryClientesCLI_UF: TStringField;
+    qryClientesCLI_CEL1: TStringField;
+    qryClientesCLI_TELEFONE: TStringField;
+    qryClientesCLI_EMAIL: TStringField;
+    qryClientesCLI_DATACAD: TDateField;
+    qryClientesCLI_NUMERO: TStringField;
+    qryClientesCLI_BAIRRO: TStringField;
+    qryClientesCLI_SITUACAO: TStringField;
+    qryClientesCLI_FACEBOOK: TStringField;
+    qryClientesCLI_SEXO: TStringField;
+    qryClientesCLI_DATANASC: TDateField;
+    qryClientesCLI_ESTADOCIVIL: TStringField;
+    qryClientesCLI_CODIGOAUXILIAR: TStringField;
+    qryClientesCLI_CODIGO: TIntegerField;
+    qryClientesCLI_INDICADO_POR: TStringField;
+    qryClientesCLI_PROFISSAOID: TIntegerField;
+    qryClientesCLI_CIDADECODIGO: TIntegerField;
+    qryClientesCLI_CIDADENOME: TStringField;
+    qryClientesCLI_PROFISSAO: TStringField;
+    qryClientesCLI_NACIONALIDADE: TStringField;
+    dsClientes: TDataSource;
+    qryClientesCLI_COMPLEMENTO: TStringField;
+    qryEstoque: TUniQuery;
+    qryProfissionais: TUniQuery;
+    qryOrdens: TUniQuery;
+    qryUsuarios: TUniQuery;
+    qryProfissionaisPROFIS_IDPROFISSIONAL: TIntegerField;
+    qryProfissionaisPROFIS_CPF: TStringField;
+    qryProfissionaisPROFIS_NOME: TStringField;
+    qryProfissionaisPROFIS_APELIDO: TStringField;
+    qryProfissionaisPROFIS_DATANASC: TDateField;
+    qryProfissionaisPROFIS_ENDERECO: TStringField;
+    qryProfissionaisPROFIS_IDCIDADE: TIntegerField;
+    qryProfissionaisPROFIS_IDFUNCAO: TIntegerField;
+    qryProfissionaisPROFIS_CEL: TStringField;
+    qryProfissionaisPROFIS_TELEFONE: TStringField;
+    qryProfissionaisPROFIS_EMAIL: TStringField;
+    qryProfissionaisPROFIS_DATACAD: TDateField;
+    qryEstoqueCODIGO: TIntegerField;
+    qryEstoqueREFERENCIA: TStringField;
+    qryEstoqueBARRA: TStringField;
+    qryEstoqueDESCRICAO: TStringField;
+    qryEstoqueSERVICO: TStringField;
+    qryEstoquePRODUTO: TStringField;
+    qryEstoqueTIPO: TStringField;
+    qryEstoqueUNIDADE: TStringField;
+    qryEstoqueCODCAT: TFloatField;
+    qryEstoqueCATEGORIA: TStringField;
+    qryEstoqueQUANT_MINI: TFloatField;
+    qryEstoqueQUANT_ATUA: TFloatField;
+    qryEstoqueQUANT_MAX: TFloatField;
+    qryEstoqueQUANT_UNID: TFloatField;
+    qryEstoqueP_CUSTO: TFloatField;
+    qryEstoqueP_VENDA: TFloatField;
+    qryEstoqueMENSAGEM: TStringField;
+    qryEstoqueIPI: TStringField;
+    qryEstoqueCOD_SIT: TStringField;
+    qryEstoqueCOD_IPI: TStringField;
+    qryEstoqueAL_IPI: TFloatField;
+    qryEstoqueCLAS_FIS: TStringField;
+    qryEstoqueAL_ICMS: TFloatField;
+    qryEstoqueFOTO: TStringField;
+    qryEstoqueOBS: TStringField;
+    qryEstoqueIMPRESSO: TStringField;
+    qryEstoquePECA: TFloatField;
+    qryEstoqueQUANTIDADE: TFloatField;
+    qryEstoqueGRUPO: TStringField;
+    qryEstoqueM3: TStringField;
+    qryEstoqueQUANTIDADE_1: TFloatField;
+    qryEstoqueCOMPRADO: TStringField;
+    qryEstoqueDESCONTO: TFloatField;
+    qryEstoqueDATA: TStringField;
+    qryEstoqueENTANT: TFloatField;
+    qryEstoqueSAIANT: TFloatField;
+    qryEstoqueSALDOANT: TFloatField;
+    qryEstoqueENTRADA: TFloatField;
+    qryEstoqueSAIDA: TFloatField;
+    qryEstoqueSALDO: TFloatField;
+    qryEstoqueMARGEM: TFloatField;
+    qryEstoqueAVISOMIN: TStringField;
+    qryEstoqueAVISOZER: TStringField;
+    qryEstoqueFALTA: TFloatField;
+    qryEstoqueMAIS_VEND: TFloatField;
+    qryEstoqueMAIS_QUAN: TFloatField;
+    qryEstoqueMARCA: TStringField;
+    qryEstoqueCODMAR: TFloatField;
+    qryEstoqueFOTO1: TStringField;
+    qryEstoqueFOTO2: TStringField;
+    qryEstoquePRAZO: TFloatField;
+    qryEstoqueATACADO: TFloatField;
+    qryEstoqueMARGEM2: TFloatField;
+    qryEstoqueMARGEM3: TFloatField;
+    qryEstoqueLOCALIZA: TStringField;
+    qryEstoqueVENZER: TStringField;
+    qryEstoqueCORES: TStringField;
+    qryEstoqueCODFORMA: TFloatField;
+    qryEstoqueFORMATO: TStringField;
+    qryEstoqueCODVIAS: TFloatField;
+    qryEstoqueVIAS: TStringField;
+    qryEstoqueCODCORES: TFloatField;
+    qryEstoqueCPL1: TStringField;
+    qryEstoqueCPL2: TStringField;
+    qryEstoqueVENCIMENTO: TStringField;
+    qryEstoqueLUCRO: TFloatField;
+    qryEstoqueTOT_CUSTO: TFloatField;
+    qryEstoqueLUCROP: TFloatField;
+    qryEstoqueBLOQUEARD: TStringField;
+    qryEstoqueLIMITED: TFloatField;
+    qryEstoqueCOMISSAO: TFloatField;
+    dsItensOs: TDataSource;
+    qryItensOs: TUniQuery;
+    MySQLUniProvider1: TMySQLUniProvider;
+    qryEmpresa: TUniQuery;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DMPrincipal: TDMPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+end.

@@ -1,0 +1,11 @@
+inherited F_cadPadrao1: TF_cadPadrao1
+  Caption = 'Estoque'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Panel1: TPanel
+    ExplicitWidth = 697
+  end
+  inherited ScrollBox1: TScrollBox
+    ExplicitWidth = 697
+  end
+end

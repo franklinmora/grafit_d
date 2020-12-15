@@ -1,0 +1,72 @@
+unit unConsultaClientes;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Buttons, Grids, DBGrids;
+
+type
+  TF_ConsultaClientes = class(TForm)
+    CbPesq: TComboBox;
+    Editcon: TEdit;
+    DBGrid1: TDBGrid;
+    BitBtn1: TBitBtn;
+    procedure BitBtn1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  F_ConsultaClientes: TF_ConsultaClientes;
+
+implementation
+
+{$R *.dfm}
+
+uses
+  undmprincipal;
+
+procedure TF_ConsultaClientes.BitBtn1Click(Sender: TObject);
+begin
+ if CbPesq.ItemIndex = 0 then
+    Begin
+      With DMPrincipal do
+        begin
+
+          qryClientes.Close;
+          qryClientes.sql.add('Select * from clientes');
+          qryClientes.Open;
+        end;
+    end;
+     if CbPesq.ItemIndex = 1 then
+    Begin
+      With DMPrincipal do
+        begin
+
+
+            qryClientes.Close;
+            qryclientes.SQL.Clear;
+            qryclientes.SQL.add('select * from  clientes where cli_idcliente like '+#39+'%'+editcon.Text+'%'+#39'''');
+            qryClientes.Open;
+
+        end;
+    end;
+     if CbPesq.ItemIndex = 2 then
+    Begin
+      With DMPrincipal do
+        begin
+
+          qryClientes.close;
+          qryClientes.SQL.clear;
+          qryclientes.SQL.add('select * from clientes where cli_nome like '+#39+'%'+editcon.Text+'%'+#39'''');
+          qryClientes.Open;
+
+        end;
+    end;
+    Label2.Caption := IntToStr(DMPrincipal.qryClientes.RecordCount);
+end;
+
+end.

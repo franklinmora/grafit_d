@@ -1,0 +1,89 @@
+unit unCadProfissionais;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, unCadPadrao, ActnList, StdCtrls, Buttons, ExtCtrls, ACBrBase,
+  ACBrEnterTab, DB, Mask, DBCtrls;
+
+type
+  TF_cadProfissionais = class(TF_cadPadrao)
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    dsProfissionais: TDataSource;
+    Label2: TLabel;
+    DBEdit2: TDBEdit;
+    Label3: TLabel;
+    DBEdit3: TDBEdit;
+    Label4: TLabel;
+    DBEdit4: TDBEdit;
+    Label5: TLabel;
+    DBEdit5: TDBEdit;
+    Label6: TLabel;
+    DBEdit6: TDBEdit;
+    Label7: TLabel;
+    DBEdit7: TDBEdit;
+    Label8: TLabel;
+    DBEdit8: TDBEdit;
+    Label9: TLabel;
+    DBEdit9: TDBEdit;
+    Label11: TLabel;
+    DBEdit11: TDBEdit;
+    Label12: TLabel;
+    DBEdit12: TDBEdit;
+    ACBrEnterTab1: TACBrEnterTab;
+    DBLookupComboBox1: TDBLookupComboBox;
+    DBNavigator1: TDBNavigator;
+    DBLookupComboBox2: TDBLookupComboBox;
+    procedure act_novoExecute(Sender: TObject);
+    procedure act_salvarExecute(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  F_cadProfissionais: TF_cadProfissionais;
+
+implementation
+
+{$R *.dfm}
+
+uses
+  undmprincipal;
+
+procedure TF_cadProfissionais.act_novoExecute(Sender: TObject);
+begin
+  inherited;
+   with dmprincipal do
+   begin
+     qryProfissionais.Open;
+     qryProfissionais.Insert;
+     qryProfissionaisPROFIS_DATACAD.Value := date;
+     DBEdit2.SetFocus;
+   end;
+      HabilitaControle(F_cadProfissionais);
+end;
+
+procedure TF_cadProfissionais.act_salvarExecute(Sender: TObject);
+begin
+  inherited;
+  try
+
+   with DMPrincipal do
+      begin
+        qryProfissionais.Post;
+        qryprofissionais.ApplyUpdates;
+      end;
+       HabilitaBotoes(F_CadProfissionais);
+   except
+
+   Application.MessageBox('Não foi possivel Salvar os dados',
+     'Application.Title', MB_OK + MB_ICONWARNING);
+
+  end;
+end;
+
+end.

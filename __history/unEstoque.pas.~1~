@@ -1,0 +1,24 @@
+unit unEstoque;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, unCadPadrao, ActnList, StdCtrls, Buttons, ExtCtrls;
+
+type
+  TF_cadPadrao1 = class(TF_cadPadrao)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  F_cadPadrao1: TF_cadPadrao1;
+
+implementation
+
+{$R *.dfm}
+
+end.

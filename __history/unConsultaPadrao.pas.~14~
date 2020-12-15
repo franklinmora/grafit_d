@@ -1,0 +1,38 @@
+unit unConsultaPadrao;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ActnList, Grids, DBGrids, ExtCtrls;
+
+type
+  Tf_Consultapadrao = class(TForm)
+    CbPesq: TComboBox;
+    Editcon: TEdit;
+    Panel1: TPanel;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    DBGrid1: TDBGrid;
+    procedure CbPesqChange(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  f_Consultapadrao: Tf_Consultapadrao;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tf_Consultapadrao.CbPesqChange(Sender: TObject);
+begin
+  EditCon.Clear;
+  EditCon.SetFocus;
+end;
+
+end.

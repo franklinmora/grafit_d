@@ -1,0 +1,84 @@
+unit unDMPrincipal;
+
+interface
+
+uses
+  SysUtils, Classes, DBAccess, DB, MemDS, IBCustomDataSet,
+   Uni, UniProvider, MySQLUniProvider, InterBaseUniProvider;
+
+type
+  TDMPrincipal = class(TDataModule)
+    dsEstoque: TDataSource;
+    dsProfissionais: TDataSource;
+    dsOrdens: TDataSource;
+    dsUsuarios: TDataSource;
+    dsCidade: TDataSource;
+    UniConnection1: TUniConnection;
+    UniTransaction1: TUniTransaction;
+    qryClientes: TUniQuery;
+    qryCidade: TUniQuery;
+    qryCidadeCODIGO: TIntegerField;
+    qryCidadeNOME: TStringField;
+    qryCidadeUF: TStringField;
+    qryCidadePAIS: TStringField;
+    qryCidadeCODIGO_IBGE: TStringField;
+    qryClientesCLI_IDCLIENTE: TIntegerField;
+    qryClientesCLI_INSTAGRAM: TStringField;
+    qryClientesCLI_CPFCNPJ: TStringField;
+    qryClientesCLI_NOME: TStringField;
+    qryClientesCLI_ANIVERSARIO: TDateField;
+    qryClientesCLI_ENDERECO: TStringField;
+    qryClientesCLI_CEP: TStringField;
+    qryClientesCLI_UF: TStringField;
+    qryClientesCLI_CEL1: TStringField;
+    qryClientesCLI_TELEFONE: TStringField;
+    qryClientesCLI_EMAIL: TStringField;
+    qryClientesCLI_DATACAD: TDateField;
+    qryClientesCLI_NUMERO: TStringField;
+    qryClientesCLI_BAIRRO: TStringField;
+    qryClientesCLI_SITUACAO: TStringField;
+    qryClientesCLI_FACEBOOK: TStringField;
+    qryClientesCLI_SEXO: TStringField;
+    qryClientesCLI_DATANASC: TDateField;
+    qryClientesCLI_ESTADOCIVIL: TStringField;
+    qryClientesCLI_CODIGOAUXILIAR: TStringField;
+    qryClientesCLI_CODIGO: TIntegerField;
+    qryClientesCLI_INDICADO_POR: TStringField;
+    qryClientesCLI_PROFISSAOID: TIntegerField;
+    qryClientesCLI_CIDADECODIGO: TIntegerField;
+    qryClientesCLI_CIDADENOME: TStringField;
+    qryClientesCLI_PROFISSAO: TStringField;
+    qryClientesCLI_NACIONALIDADE: TStringField;
+    dsClientes: TDataSource;
+    qryClientesCLI_COMPLEMENTO: TStringField;
+    InterBaseUniProvider1: TInterBaseUniProvider;
+    qryEstoque: TUniQuery;
+    qryProfissionais: TUniQuery;
+    qryOrdens: TUniQuery;
+    qryUsuarios: TUniQuery;
+    qryProfissionaisPROFIS_IDPROFISSIONAL: TIntegerField;
+    qryProfissionaisPROFIS_CPF: TStringField;
+    qryProfissionaisPROFIS_NOME: TStringField;
+    qryProfissionaisPROFIS_APELIDO: TStringField;
+    qryProfissionaisPROFIS_DATANASC: TDateField;
+    qryProfissionaisPROFIS_ENDERECO: TStringField;
+    qryProfissionaisPROFIS_IDCIDADE: TIntegerField;
+    qryProfissionaisPROFIS_IDFUNCAO: TIntegerField;
+    qryProfissionaisPROFIS_CEL: TStringField;
+    qryProfissionaisPROFIS_TELEFONE: TStringField;
+    qryProfissionaisPROFIS_EMAIL: TStringField;
+    qryProfissionaisPROFIS_DATACAD: TDateField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DMPrincipal: TDMPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+end.

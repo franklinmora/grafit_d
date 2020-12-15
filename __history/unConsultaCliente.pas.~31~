@@ -1,0 +1,156 @@
+unit unConsultaCliente;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, unConsultaPadrao, ActnList, StdCtrls, ExtCtrls, Grids, DBGrids,
+  Buttons, JvExDBGrids, JvDBGrid;
+
+type
+  Tf_ConsultaClientes = class(Tf_Consultapadrao)
+    Label4: TLabel;
+    BitBtn1: TBitBtn;
+    ActionList1: TActionList;
+    act_Consultar: TAction;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
+      DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure FormShow(Sender: TObject);
+    procedure act_PesquisarExecute(Sender: TObject);
+    procedure act_ConsultarExecute(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  f_ConsultaClientes: Tf_ConsultaClientes;
+
+implementation
+
+{$R *.dfm}
+
+uses
+ undmprincipal, uncadclientes;
+
+
+procedure Tf_ConsultaClientes.act_ConsultarExecute(Sender: TObject);
+begin
+  inherited;
+ if CbPesq.ItemIndex = 0 then
+    Begin
+      With DMPrincipal do
+        begin
+
+          qryClientes.Close;
+          qryClientes.sql.add('Select * from clientes');
+          qryClientes.Open;
+        end;
+    end;
+     if CbPesq.ItemIndex = 1 then
+    Begin
+      With DMPrincipal do
+        begin
+
+
+            qryClientes.Close;
+            qryclientes.SQL.Clear;
+            qryclientes.SQL.add('select * from  clientes where cli_idcliente like '+#39+'%'+editcon.Text+'%'+#39'');
+            qryClientes.Open;
+
+        end;
+    end;
+     if CbPesq.ItemIndex = 2 then
+    Begin
+      With DMPrincipal do
+        begin
+
+          qryClientes.close;
+          qryClientes.SQL.clear;
+          qryclientes.SQL.add('select * from clientes where cli_nome like '+#39+'%'+editcon.Text+'%'+#39'');
+          qryClientes.Open;
+
+        end;
+    end;
+    Label2.Caption := IntToStr(DMPrincipal.qryClientes.RecordCount);
+end;
+
+procedure Tf_ConsultaClientes.act_PesquisarExecute(Sender: TObject);
+begin
+  inherited;
+ if CbPesq.ItemIndex = 0 then
+    Begin
+      With DMPrincipal do
+        begin
+
+          qryClientes.Close;
+          qryClientes.sql.add('Select * from clientes');
+          qryClientes.Open;
+        end;
+    end;
+     if CbPesq.ItemIndex = 1 then
+    Begin
+      With DMPrincipal do
+        begin
+
+
+            qryClientes.Close;
+            qryclientes.SQL.Clear;
+            qryclientes.SQL.add('select * from  clientes where cli_idcliente like '+#39+'%'+editcon.Text+'%'+#39'');
+            qryClientes.Open;
+
+        end;
+    end;
+     if CbPesq.ItemIndex = 2 then
+    Begin
+      With DMPrincipal do
+        begin
+
+          qryClientes.close;
+          qryClientes.SQL.clear;
+          qryclientes.SQL.add('select * from clientes where cli_nome like '+#39+'%'+editcon.Text+'%'+#39'');
+          qryClientes.Open;
+
+        end;
+    end;
+    Label2.Caption := IntToStr(DMPrincipal.qryClientes.RecordCount);
+end;
+
+procedure Tf_ConsultaClientes.DBGrid1DrawColumnCell(Sender: TObject;
+  const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
+begin
+  inherited;
+//If odd(dmprincipal.qryclientes.RecNo) then
+//        begin
+//            dbgrid1.Canvas.Font.Color := clblack;
+//            dbgrid1.Canvas.Brush.Color:=clSkyblue;
+//         end
+//
+//    else
+//
+//        begin
+//            dbgrid1.Canvas.Font.Color := clBlack;
+//            dbgrid1.Canvas.Brush.Color:= clWhite;
+//        end;
+//
+//    dbgrid1.Canvas.FillRect(Rect);
+//    dbgrid1.Canvas.TextOut(Rect.Left + 2,Rect.Top, Column.Field.AsString);
+end;
+
+procedure Tf_ConsultaClientes.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  inherited;
+//    F_ConsultaClientes := nil;
+  action := cafree;
+end;
+
+procedure Tf_ConsultaClientes.FormShow(Sender: TObject);
+begin
+  inherited;
+  Label2.Caption := IntToStr(DMPrincipal.qryClientes.RecordCount);
+end;
+
+end.

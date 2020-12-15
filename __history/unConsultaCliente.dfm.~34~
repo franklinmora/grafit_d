@@ -1,0 +1,95 @@
+inherited f_ConsultaClientes: Tf_ConsultaClientes
+  Caption = 'Consulta Clientes'
+  ClientWidth = 886
+  OnClose = FormClose
+  OnShow = FormShow
+  ExplicitWidth = 892
+  PixelsPerInch = 96
+  TextHeight = 16
+  object Label4: TLabel [1]
+    Left = 159
+    Top = 8
+    Width = 49
+    Height = 16
+    Caption = 'Cliente:'
+  end
+  inherited CbPesq: TComboBox
+    Text = ''
+    Items.Strings = (
+      ''
+      'C'#243'digo'
+      'Cliente')
+  end
+  inherited Editcon: TEdit
+    Width = 602
+    CharCase = ecUpperCase
+    Text = ''
+    ExplicitWidth = 602
+  end
+  inherited DBGrid1: TDBGrid
+    Left = 8
+    Width = 841
+    Height = 291
+    TabStop = False
+    DataSource = DMPrincipal.dsClientes
+    Font.Height = -11
+    ReadOnly = True
+    OnDrawColumnCell = DBGrid1DrawColumnCell
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'CLI_IDCLIENTE'
+        Title.Caption = 'C'#243'digo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CLI_NOME'
+        Title.Caption = 'Cliente'
+        Width = 250
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CLI_CEL1'
+        Title.Caption = 'Celular'
+        Width = 61
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CLI_INSTAGRAM'
+        Title.Caption = 'Instagram'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CLI_FACEBOOK'
+        Title.Caption = 'Facebook'
+        Visible = True
+      end>
+  end
+  inherited Panel1: TPanel
+    Width = 886
+    ExplicitWidth = 886
+  end
+  object BitBtn1: TBitBtn
+    Left = 767
+    Top = 23
+    Width = 75
+    Height = 25
+    Action = act_Consultar
+    Caption = 'act_Consultar'
+    DoubleBuffered = True
+    ParentDoubleBuffered = False
+    TabOrder = 4
+  end
+  object ActionList1: TActionList
+    Left = 680
+    Top = 8
+    object act_Consultar: TAction
+      Caption = 'act_Consultar'
+      OnExecute = act_ConsultarExecute
+    end
+  end
+end

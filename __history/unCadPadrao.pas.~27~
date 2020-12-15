@@ -1,0 +1,80 @@
+unit unCadPadrao;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ActnList, StdCtrls, Buttons, ExtCtrls, DB;
+
+type
+  TF_cadPadrao = class(TForm)
+    Panel1: TPanel;
+    botaoNovo: TBitBtn;
+    botaoSalvar: TBitBtn;
+    botaoImprimir: TBitBtn;
+    ActionList1: TActionList;
+    act_novo: TAction;
+    act_alterar: TAction;
+    act_Pesquisar: TAction;
+    act_salvar: TAction;
+    act_imprimir: TAction;
+    act_fechar: TAction;
+    ScrollBox1: TScrollBox;
+    botaofechar: TBitBtn;
+    dsClientes: TDataSource;
+    BitBtn1: TBitBtn;
+    Function Formexiste(Nomejanela:TForm):boolean;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure HabilitaBotoes(Sender: TObject);
+    procedure HabilitaControle(Sender: TObject);
+    procedure act_fecharExecute(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  F_cadPadrao: TF_cadPadrao;
+
+implementation
+
+uses unConsultaPadrao;
+
+{$R *.dfm}
+
+procedure TF_cadPadrao.act_fecharExecute(Sender: TObject);
+begin
+   Close;
+end;
+
+procedure TF_cadPadrao.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+   Action := caFree;
+end;
+
+Function TF_cadPadrao.Formexiste(Nomejanela:TForm):boolean;
+var
+I : integer;
+begin
+  Formexiste := false;
+   for i := 0 to componentcount - 1 do
+    if Components[i] is TForm then
+    if TForm(Components[i])= nomejanela then
+      Formexiste := true;
+end;
+
+procedure TF_cadPadrao.HabilitaBotoes(Sender: TObject);
+begin
+   botaoNovo.Enabled   := true;
+   botaoSalvar.Enabled := False;
+
+end;
+procedure TF_cadPadrao.HabilitaControle(Sender: TObject);
+begin
+    botaoNovo.Enabled   := False;
+    botaoSalvar.Enabled := True;
+
+end;
+
+end.

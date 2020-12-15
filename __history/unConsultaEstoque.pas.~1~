@@ -1,0 +1,34 @@
+unit unConsultaEstoque;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Grids, DBGrids, ActnList, StdCtrls, Buttons, ACBrBase, ACBrEnterTab,
+  ExtCtrls;
+
+type
+  Tf_ConsultaEstoque = class(TForm)
+    Panel1: TPanel;
+    ActionList1: TActionList;
+    ACBrEnterTab1: TACBrEnterTab;
+    Cbpesq: TComboBox;
+    Edit1: TEdit;
+    Label1: TLabel;
+    BitBtn1: TBitBtn;
+    act_Pesquisar: TAction;
+    DBGrid1: TDBGrid;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  f_ConsultaEstoque: Tf_ConsultaEstoque;
+
+implementation
+
+{$R *.dfm}
+
+end.
